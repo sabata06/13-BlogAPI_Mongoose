@@ -27,7 +27,7 @@ app.all("/", (req, res) => {
 });
 
 // Routes:
-// app.use('/blog', require('./src/routes/blogRoute'))
+app.use("/blog", require("./src/routes/blogRoute"));
 
 /* ------------------------------------------------------- */
 // Synchronization:
