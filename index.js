@@ -27,11 +27,12 @@ app.all("/", (req, res) => {
 });
 
 // Routes:
+app.use("/user", require("./src/routes/userRoute"));
 app.use("/blog", require("./src/routes/blogRoute"));
 
 /* ------------------------------------------------------- */
 // Synchronization:
-require("./src/sync")();
+// require("./src/sync")();
 
 // errorHandler:
 app.use(require("./src/errorHandler"));
