@@ -4,6 +4,8 @@
 ------------------------------------------------------- */
 const mongoose = require("mongoose");
 
+const passwordEncrypt = require("../helpers/passwordEncrypt");
+
 const UserSchema = new mongoose.Schema(
   {
     email: {
@@ -18,6 +20,7 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
+      set: (password) => passwordEncrypt(password),
     },
 
     firstName: String,
